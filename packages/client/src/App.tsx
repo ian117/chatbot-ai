@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import { Button } from "./components/ui/button"
 
 function App() {
   const [message, setMessage] = useState("")
@@ -14,7 +14,10 @@ function App() {
   }, [])
 
   return (
-    <p>{message}</p>
+    <div className="p-4" >
+      <p>{message}</p>
+      <Button>Click me</Button>
+    </div>
 
   )
 }

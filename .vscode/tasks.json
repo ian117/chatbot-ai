@@ -1,0 +1,65 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Root",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-i"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "root_term"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Server",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-i"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/packages/server"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "server_term"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Client",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-i"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/packages/client"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "client_term"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Setup All Terminals",
+            "dependsOn": [
+                "Root",
+                "Server",
+                "Client"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

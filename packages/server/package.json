@@ -15,6 +15,9 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.24",
+    "@ai-sdk/openai": "^3.0.26",
+    "ai": "^6.0.79",
     "dotenv": "^17.2.4",
     "express": "^5.2.1"
   }

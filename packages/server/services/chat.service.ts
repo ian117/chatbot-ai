@@ -1,6 +1,6 @@
 import { generateText } from "ai";
 import { google } from "@ai-sdk/google";
-import type { IChatRepository } from "../repositories/chat.repository.ts";
+import type { IChatRepository } from "../core/repositories/chat.repository.ts";
 
 export class ChatService {
     private chatRepository: IChatRepository;

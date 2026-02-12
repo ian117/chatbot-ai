@@ -9,14 +9,21 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/pg": "^8.16.0",
     "concurrently": "^9.2.1",
+    "drizzle-kit": "^0.31.9",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7"
+    "lint-staged": "^16.2.7",
+    "tsx": "^4.21.0"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "drizzle-orm": "^0.45.1",
+    "pg": "^8.18.0"
+  }
 }

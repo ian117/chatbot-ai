@@ -13,7 +13,7 @@ export const usersTable = pgTable('users', {
 
 
 export const sessionTable = pgTable("session", {
-    id: text("id").primaryKey(),
+    id: uuid("id").primaryKey().defaultRandom(),
     expiresAt: timestamp("expires_at").notNull(),
     token: text("token").notNull().unique(),
     createdAt: timestamp("created_at").notNull(),
@@ -27,7 +27,7 @@ export const sessionTable = pgTable("session", {
 });
 
 export const accountTable = pgTable("account", {
-    id: text("id").primaryKey(),
+    id: uuid("id").primaryKey().defaultRandom(),
     accountId: text("account_id").notNull(),
     providerId: text("provider_id").notNull(),
     userId: uuid("user_id")

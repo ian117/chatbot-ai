@@ -1,5 +1,5 @@
 import type { IChatRepository } from "../../core/repositories/chat.repository.ts";
-import type { Message } from "../../core/entities/message.entity.ts";
+import type { Message } from "../../core/entities/entities.ts";
 
 // Implementacion de chat repository
 // Aqui guardar el mensaje, chat y todo eso

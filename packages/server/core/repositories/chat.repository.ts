@@ -1,4 +1,4 @@
-import type { Message } from "../entities/message.entity.ts";
+import type { Message } from "../entities/entities.ts";
 
 export interface IChatRepository {
     saveMessage(message: Message): Promise<void>;

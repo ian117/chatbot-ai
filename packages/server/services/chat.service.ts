@@ -20,7 +20,10 @@ export class ChatService {
         });
 
         // Save AI response (mock)
-        await this.chatRepository.saveMessage({ role: "assistant", content: result.text });
+        await this.chatRepository.saveMessage({
+            role: "assistant",
+            content: result.text
+        });
 
         return result;
     }

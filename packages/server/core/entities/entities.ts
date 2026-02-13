@@ -42,4 +42,33 @@ export interface Session {
     token: string;
     ipAddress?: string | null;
     userAgent?: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+// 5. Account: Vinculación con proveedores OAuth (Google, GitHub, etc.)
+export interface Account {
+    id: string;
+    accountId: string;
+    providerId: string;
+    userId: string;
+    accessToken?: string | null;
+    refreshToken?: string | null;
+    idToken?: string | null;
+    accessTokenExpiresAt?: Date | null;
+    refreshTokenExpiresAt?: Date | null;
+    scope?: string | null;
+    password?: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+// 6. Verification: Para tokens de email, etc.
+export interface Verification {
+    id: string;
+    identifier: string;
+    value: string;
+    expiresAt: Date;
+    createdAt?: Date | null;
+    updatedAt?: Date | null;
 }

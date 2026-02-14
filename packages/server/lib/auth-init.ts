@@ -4,7 +4,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import db from "../infrastructure/db/index.ts"
 import { accountTable, sessionTable, usersTable, verificationTable } from "../infrastructure/db/schema.ts";
 
-export const auth = betterAuth({
+export const authInit = betterAuth({
     database: drizzleAdapter(db, {
         provider: "pg",
         schema: {

@@ -1,3 +1,4 @@
+// If import erased, add export {} for ts compile as module!
 import { type User, type Session } from "../core/entities/entities.ts";
 
 declare global {

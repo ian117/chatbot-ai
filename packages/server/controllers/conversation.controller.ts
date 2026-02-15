@@ -81,15 +81,16 @@ export class ConversationController {
     addMessage = async (req: Request, res: Response) => {
         try {
             const id = this.getConversationId(req);
-            const { role, content } = req.body;
+            const { content } = req.body;
             const userId = res.locals.user.id;
 
-            if (!role || !content) {
-                res.status(400).json({ message: "Role and content are required" });
+            if (!content) {
+                res.status(400).json({ message: "Content is required" });
                 return;
             }
 
-            const message = await this.conversationService.addMessage(id, userId, role as MessageRole, content);
+            // Force role to "user" for manual message additions
+            const message = await this.conversationService.addMessage(id, userId, "user", content);
             res.status(201).json(message);
         } catch (error: any) {
             if (error.message === "Invalid conversation ID") {

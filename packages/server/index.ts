@@ -1,8 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
-import chatRoutes from "./routes/chat.routes.ts";
+
 import baseRoutes from "./routes/base.routes.ts";
 import authRoutes from "./routes/auth.routes.ts";
+import conversationRoutes from "./routes/conversation.routes.ts";
 import { setupGlobalMiddlewares } from "./middlewares/setup.ts";
 
 dotenv.config();
@@ -20,9 +21,8 @@ app.use("/api", authRoutes);
 // Better Auth Explicits ask about this middleware after auth is configured
 app.use(express.json());
 
-// Setup Routes
-app.use(baseRoutes);
-app.use("/api", chatRoutes);
+app.use("/api", baseRoutes);
+app.use("/api/conversations", conversationRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
